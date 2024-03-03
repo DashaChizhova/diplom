@@ -24,3 +24,28 @@
                         </p>
                     </div>
     <?php }} ?>
+
+    <?php 
+			
+            $sql = "SELECT *
+            FROM students t1 
+           
+            JOIN user t2 ON (t1.student_id = t2.student_id )
+            WHERE t2.id='$user'
+            ORDER BY t1.id;";
+            $res = $mysqli -> query($sql);
+
+            if($res -> num_rows > 0) {
+                while($resArticle = $res -> fetch_assoc()) {
+            
+        ?>
+             <div class="article__block">
+                        
+                      
+                        <p class="article__mintext">Курс обучения: <?=  $resArticle['course_number'] ?>
+                        <p class="article__mintext">Степень обучения: <?=  $resArticle['education_degree'] ?>
+                        <p class="article__mintext">Стипендии: <?= $resArticle['academ'] ?> <?= $resArticle['social'] ?> <?= $resArticle['upacadem'] ?>
+                        <?= $resArticle['upsocial'] ?> <?= $resArticle['military'] ?> <?= $resArticle['namestep'] ?> <?= $resArticle['president'] ?>
+                        <?= $resArticle['needhelp'] ?>
+                    </div>
+    <?php }} ?>

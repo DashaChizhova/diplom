@@ -10,6 +10,7 @@ include('include/db_connect.php');
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Расчет стоимости стипендии</title>
     <link rel="stylesheet" href="css/calculator.css" />
+  
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -21,6 +22,7 @@ include('include/db_connect.php');
   </head>
 
   <body>
+
   <form enctype="multipart/form-data" method="post" action="">
     <main class="calc-wrapper">
       <div class="container">
@@ -246,7 +248,7 @@ include('include/db_connect.php');
       </div>
     </footer>
 
-    <script src="js/main.js"></script>
-    <script src="js/notmain.js"></script>
+    <script src="js/calculator__main.js"></script>
+    <script src="js/calculator__notmain.js"></script>
   </body>
 </html>

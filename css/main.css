@@ -50,7 +50,20 @@ a {
 .nav__img {
     vertical-align: middle;
 }
-
+.calculator__btn__block{
+    position: fixed;
+  bottom: 50px;
+  right: 0px;
+  right: 85px;
+  margin-top: 36px;
+  display: inline-block;
+}
+.calculator__btn {
+ 
+   background: #000;
+   color: #ffffff;
+   padding: 15px 20px;
+  }
 
 
 .header {
@@ -206,6 +219,7 @@ input[type=search]::placeholder {
     background: #000000;
     padding-top: 72px;
     padding-bottom: 78px;
+    
     /* margin-top: 65px; */
 }
 .footer__logo {

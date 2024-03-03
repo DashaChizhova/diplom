@@ -2,7 +2,7 @@
         <div class="container">
             <div class="row justify__content__between align__items__center">
                 <div class="col-auto">
-                <a href="index.php" class="nav__link__logo">СТИПЕНДИЯ.RU</a>
+                <a href="index.php" class="nav__link__logo">СТИПЕНДИУМ</a>
                     <!-- <img class="footer__logo" src="img/Dribbble.svg" alt=""> -->
                     <!-- <p class="footer__txt"></p> -->
                     <!-- <ul class="footer__socs">

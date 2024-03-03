@@ -15,7 +15,9 @@
                         <?php  }  else if  (isset($_SESSION['user']) && $_SESSION['user']['rights']=='admin')  { ?>
 
                             <li class="nav__item"><a href="index.php" class="nav__link">Главная</a></li>
-                           <li class="nav__item"><a href="#"class="nav__link">Список студентов</a></li>
+                           <li class="nav__item"><a href="studentslist.php"class="nav__link">Список студентов</a></li>
+                           <li class="nav__item"><a href="fond.php"class="nav__link">Годовой фонд</a></li>
+                           <li class="nav__item"><a href="reg2.php"class="nav__link">Создать студента</a></li>
                            <?php } ?>
                         <!-- <li class="nav__item"><a href="#" class="nav__link">Find Work</a></li>
                         <li class="nav__item"><a href="#" class="nav__link">Learn Design</a></li>
@@ -27,11 +29,17 @@
                 <div class="col-auto">
                     <ul>
                         <?php 
-                            if(isset($_SESSION['user']['rights'])=='user' || isset($_SESSION['user']['rights'])=='admin') {
+                            // if(isset($_SESSION['user']['rights'])=='user' || isset($_SESSION['user']['rights'])=='admin') {
+                                if(isset($_SESSION['user'])){
+                                    $sql = "SELECT * FROM `user` WHERE `id`='$user'";
+                                    $res = $mysqli -> query($sql);
+                        
+                                    if($res -> num_rows > 0) {
+                                        while($resArticle = $res -> fetch_assoc()) {
                         ?>  
-                            <li class="nav__item"><a href="lk.php" class="nav__sign"><img style=" height: 27px; vertical-align: middle; margin-right: 7px;" src="img/юзер.png" alt="">Личный кабинет</a></li>
+                            <li class="nav__item"><a href="lk.php" class="nav__sign"><img style="width: 28px; height: 27px; vertical-align: middle; margin-right: 7px; border-radius: 50%; object-fit: cover;" src="uploads_images/<?=  $resArticle['image'] ?>" alt=""><?=  $resArticle['name'] ?></a></li>
                             <li class="nav__item"><a href="include/logout.php" class="nav__sign">Выход</a></li>
-                        <?php  } else { ?>
+                        <?php  } } } else { ?>
                             <li class="nav__item"><a href="aut.php" class="nav__sign">Авторизоваться</a></li>
                             <li class="nav__item"><a href="reg.php" class="nav__btn">Регистрация</a></li>
                         <?php } ?>

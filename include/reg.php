@@ -27,7 +27,7 @@ if($password === $repeat_password) {
     ";
     mysqli_query($mysqli, $sql);
     $_SESSION['message'] = 'Registration was successful!';
-    header('Location: ../aut.php');
+    header('Location: ../куп2.php');
 
 } else {
         $_SESSION['message'] = 'Passwords dont match!';
