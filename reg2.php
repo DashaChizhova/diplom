@@ -46,19 +46,19 @@ if(isset($_SESSION['user']['id'])){
                        <div>
                        
                       
-                       <div class="title-lite"> <input type="checkbox" id="checkbox" class="checkbox" name="academ" value="Академическая"   />Академическая</div>
-                        <div class="title-lite"> <input type="checkbox" id="checkbox" class="checkbox" name="social" value="Социальная"   />Социальная</div>
+                       <div class="title-lite"> <input type="checkbox" id="checkbox" class="checkbox" name="academ" value="1"   />Академическая</div>
+                        <div class="title-lite"> <input type="checkbox" id="checkbox" class="checkbox" name="social" value="1"   />Социальная</div>
                        
-                        <div class="title-lite"><input type="checkbox" id="checkbox" class="checkbox" name="upacadem" value="Повышенная академическая" />Повышенная академическая</div>
+                        <div class="title-lite"><input type="checkbox" id="checkbox" class="checkbox" name="upacadem" value="1" />Повышенная академическая</div>
                        
-                        <div class="title-lite"> <input type="checkbox" id="checkbox" class="checkbox" name="upsocial" value="Повышенная социальная" />Повышенная социальная</div>
+                        <div class="title-lite"> <input type="checkbox" id="checkbox" class="checkbox" name="upsocial" value="1" />Повышенная социальная</div>
                       
-                        <div class="title-lite"> <input type="checkbox" id="checkbox" class="checkbox" name="military" value="Стипендия военной кафедры" />Стипендия военной кафедры</div>
+                        <div class="title-lite"> <input type="checkbox" id="checkbox" class="checkbox" name="military" value="1" />Стипендия военной кафедры</div>
                       
-                        <div class="title-lite">  <input type="checkbox" id="checkbox" class="checkbox" name="namestep" value="Именная стипендия" />Именная стипендия</div>
+                        <div class="title-lite">  <input type="checkbox" id="checkbox" class="checkbox" name="namestep" value="1" />Именная стипендия</div>
                        
-                        <div class="title-lite"> <input type="checkbox" id="checkbox" class="checkbox" name="president" value="Стипендия президента" />Стипендия президента</div>
-                        <div class="title-lite"> <input type="checkbox" id="checkbox" class="checkbox" name="needhelp" value="Нуждается в материальной поддержке" />Нуждается в материальной поддержке</div>
+                        <div class="title-lite"> <input type="checkbox" id="checkbox" class="checkbox" name="president" value="1" />Стипендия президента</div>
+                        <div class="title-lite"> <input type="checkbox" id="checkbox" class="checkbox" name="needhelp" value="1" />Нуждается в материальной поддержке</div>
                         <input class="form__btn" type="submit" value="Создать">     
                     </div> 
                         <!-- <div><input class="form__input" type="text" name="name" placeholder="Имя" id=""></div>

@@ -38,9 +38,9 @@
             
        }else
        {
-        $login = $_POST["login"];
+        // $login = $_POST["login"];
         $name = $_POST["name"];
-        $text = $_POST["text"];
+        // $text = $_POST["text"];
         $phone = $_POST["phone"];
         $email = $_POST["email"];
         $password = $_POST["password"];
@@ -49,8 +49,8 @@
         if(isset($password)) {
            
             
-            $querynew = "login='$login', pass='$password', name='$name', phone='$phone', 
-            email='$email', text='$text'";
+            $querynew = "pass='$password', name='$name', phone='$phone', 
+            email='$email'";
 
             $update ="UPDATE user SET $querynew WHERE id='$id' ";
 
@@ -115,8 +115,8 @@
 
                        <div class="row">
                         <div class="col-8">
-                            <h2 class="form__title">Information about me</h2>
-                            <p class="form__subtitle">By filling in the data, I agree to the privacy policy</p>
+                            <h2 class="form__title">Редактирование информации о себе</h2>
+                            <p class="form__subtitle"></p>
         
                             <form enctype="multipart/form-data" method="post">
                             <?php
@@ -137,13 +137,13 @@ if  (	(strlen($resPost["image"]) > 0) && (file_exists("uploads_images/".$resPost
 	$img_pathh = 'uploads_images/'.$resPost["image"];
 echo '
 <label class="stylelabel" >Картинка</label>
-<div id="baseimg col-4">
+<div id="baseimg-upload col-4">
 <img style="width: 200px;" src="'.$img_pathh.'" /> <br>
 <a class="btn" href="lk-about.php?id='.$resPost["id"].'&image='.$resPost["image"].'&action=delete" >Удалить</a>
 </div>    ';
 }else {  
 echo '
-<label class="stylelabel" >Добавить файл</label>
+<label class="stylelabel" >Изменить фотографию</label>
 <div id="baseimg-upload">
 <input class="form-control" type="hidden" name="MAX_FILE_SIZE" value="5000000"/>
 <input class="form-control" type="file" name="upload_image" />
@@ -155,12 +155,12 @@ echo '
                                 <div><input class="form__input" type="text" name="name" value="<?=  $resPost['name'] ?>" placeholder="Name" id=""></div>
                                 <div><input class="form__input" type="tel" name="phone" value="<?=  $resPost['phone'] ?>" placeholder="Phone" id=""></div>
                                 <div><input class="form__input" type="email" name="email" value="<?=  $resPost['email'] ?>" placeholder="Email" id=""></div>
-                                <div><textarea class="form__input" name="text" id="" cols="30" rows="10"><?=  $resPost['text'] ?></textarea></div>
+                                <!-- <div><textarea class="form__input" name="text" id="" cols="30" rows="10"><?=  $resPost['text'] ?></textarea></div> -->
                                 <div><input class="form__input" type="password" name="password" value="<?=  $resPost['pass'] ?>" placeholder="Password" id=""></div>
                                 <div><input class="form__input" type="password" name="repeat_password"  placeholder="Repeat at password" id=""></div>
            
                             <?php  } ?>
-                            <input class="form__btn" name="submit_add" type="submit" value="Send">
+                            <input class="form__btn" name="submit_add" type="submit" value="Сохранить">
 
                             </form>
         

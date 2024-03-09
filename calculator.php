@@ -233,9 +233,9 @@ include('include/db_connect.php');
               рублей
             </div>
           </div>
-          <div class="heading">
+          <!-- <div class="heading">
             <input class="form__btn" type="submit"  value="Send">
-          </div>
+          </div> -->
         </form>
       </div>
     </main>

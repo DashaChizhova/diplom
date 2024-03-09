@@ -29,7 +29,7 @@
                     <form enctype="multipart/form-data" method="post" action="include/aut.php">
                         <div><input class="form__input" type="email" name="email" placeholder="Email" id=""></div>
                         <div><input class="form__input" type="password" name="password" placeholder="Password" id=""></div>
-                        <input class="form__btn" type="submit" value="Отправить">
+                        <input class="form__btn" type="submit" value="Войти">
                     </form>
                     <?php 
                         if(isset( $_SESSION['message'])){

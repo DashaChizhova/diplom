@@ -26,7 +26,7 @@ else {
     
 <?php include('include/nav.php'); ?>
 
-<section class="proect">
+<!-- <section class="proect">
         <div class="container">
             <div class="row">
 
@@ -68,8 +68,14 @@ else {
        
             </div>
         </div>
-    </section>
+    </section> -->
 
+    <section class="proect">
+        <div class="container">
+
+        
+        </div>
+    </section>
 
     <?php include('include/footer.php'); ?>
 

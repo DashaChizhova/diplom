@@ -107,13 +107,13 @@
         </div>
     </section>
 
-    <?php 
+    <!-- <?php 
         if (!isset($_SESSION['user']) || isset($_SESSION['user']) && $_SESSION['user']['rights']=='user')  {
     ?>  
     <div class="calculator__btn__block">
             <a class="nav__btn calculator__btn"  href="calculator.php" target="_blank">Калькулятор</a>
           </div>
-<?php } ?>
+<?php } ?> -->
     <?php include('include/footer.php'); ?>
 
 

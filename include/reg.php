@@ -21,13 +21,13 @@ if($password === $repeat_password) {
     }
 
     $password = $password;
-    $sql = "INSERT INTO `user` (`id`, `pass`, `name`, `phone`, `email`, `text`, `image`, `rights`, `surname`, `patronymic`, `student_id`)
+    $sql = "INSERT INTO `user` (`id`, `pass`, `name`, `phone`, `email`,  `image`, `rights`, `surname`, `patronymic`, `student_id`)
             VALUES 
-            (NULL, '$password','$name','$phone','$email',NULL,'$path','$rights','$surname', '$patronymic', '$student_id')
+            (NULL, '$password','$name','$phone','$email','$path','$rights','$surname', '$patronymic', '$student_id')
     ";
     mysqli_query($mysqli, $sql);
     $_SESSION['message'] = 'Registration was successful!';
-    header('Location: ../куп2.php');
+    header('Location: ../aut.php');
 
 } else {
         $_SESSION['message'] = 'Passwords dont match!';
