@@ -43,7 +43,7 @@
                                         while($resArticle = $res -> fetch_assoc()) {
                         ?>  
                             <li class="nav__item"><a href="lk.php" class="nav__sign"><img style="width: 28px; height: 27px; vertical-align: middle; margin-right: 7px; border-radius: 50%; object-fit: cover;" src="<?=  $resArticle['image'] ?>" alt=""><?=  $resArticle['name'] ?> <?=  $resArticle['surname'] ?></a></li>
-                            <li class="nav__item"><a href="include/logout.php" class="nav__sign">Выход</a></li>
+                            <li class="nav__item"><a href="include/logout.php" class="nav__btn">Выход</a></li>
                             <!-- <li class="nav__item"><a href="calculator.php" class="nav__sign"><img style="width: 28px; height: 27px; vertical-align: middle; margin-right: 7px; border-radius: 50%; object-fit: cover;" src="img/calculator.png"></a></li> -->
                         <?php  } } } else { ?>
                             <li class="nav__item"><a href="aut.php" class="nav__sign">Авторизоваться</a></li>

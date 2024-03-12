@@ -23,8 +23,42 @@
     
 <?php include('include/nav.php'); ?>
 
+<header class="header">
+        <div class="container">
+            <div class="row align__items__center">
+                <div class="header__utp">
+                    <hr class="header__hr">
+                    <br>
+                    <h1 class="header__title">Онлайн Стипендия</h1>
+                    <!-- <h1 class="header__title">Стипендия</h1> -->
+                    <h2 class="header__subtitle">Узнайте всю информацию о своей стипендии </h2>
+                    <br>
+                    <li class="nav__item"><a href="aut.php" class="nav__btn">ВОЙТИ</a></li>
+                    <!-- <li class="nav__item"><a href="reg.php" class="nav__btn nav__btn2 ">Create NFT</a></li> -->
 
-    <header class="header">
+                    <!-- <ul class="k__ul">
+                        <li class="nav__item"> <h2 class="k__number">430K+</h2><h3 class="k__caption">Art Works</h3></li>
+                        <li class="nav__item"><h2 class="k__number">159K+</h2><h3 class="k__caption">Creators</h3></li>
+                        <li class="nav__item"> <h2 class="k__number">87K+</h2><h3 class="k__caption">Collections</h3></li>
+                    </ul> -->
+                </div>
+
+                <div class="header__utp header__imgs">
+                  <img class="header__img header__img1" src="uploads_images/student.png" alt="nft">
+                  <img class="header__img header__img2" src="uploads_images/student.png" alt="nft">
+                 
+                 
+                    <div class="arrow">
+                        <a href="reg.php" class="head__btn head__btn__left">←</a>
+                        <a href="reg.php" class="head__btn head__btn__right">→</a>
+                   </div>
+                
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- <header class="header">
         <div class="container">
             <div class="header__category">
                 <ul>
@@ -61,9 +95,56 @@
                 </ul>
             </div>
         </div>
-    </header>
+    </header> -->
+    <section class="project project1">
+        <div class="main__title main__title1">
+           <h1>Новости и объявления</h1>
+        </div>
+      
+       <div class="arrow">
+            <a href="reg.php" class="head__btn head__btn__left">←</a>
+            <a href="reg.php" class="head__btn head__btn__right">→</a>
+       </div>
+           
+    </section>
+    <section class="project project1" style="background-color: white">
+        <div class="main__title main__title1">
+           <h1>Условия получения стипендий</h1>
+        </div>
+        <!-- <div class="container">
+            <div class="row">
+                <div class="col-3 project__item">
+                    <a href="#" class="project__border"><img class="project__img" src="img/mountains.png" alt=""></a>
+                        <h2 class="project__title">Sun-Glass</h2>
+                        <br>
+                        <h3 class="project__category" >Current bid</h3>
+                        <div class="project__price" >
+                            <img class="project__logo" src="img/currency.png" alt=""> 
+                            <h2 class="">1.75</h2>
+                        </div> 
+                        <a href="#" class="nav__btn project__btn">Place Bid</a> 
+                </div>
+            </div>
+        </div> -->
+       <div class="arrow">
+            <a href="reg.php" class="head__btn head__btn__left">←</a>
+            <a href="reg.php" class="head__btn head__btn__right">→</a>
+       </div>
+           
+    </section>
+    <section class="project project1">
+        <div class="main__title main__title1">
+           <h1>Контактная информация</h1>
+        </div>
+      
+       <div class="arrow">
+            <a href="reg.php" class="head__btn head__btn__left">←</a>
+            <a href="reg.php" class="head__btn head__btn__right">→</a>
+       </div>
+           
+       </section>
 
-    <section class="proect">
+    <!-- <section class="proect">
         <div class="container">
             <div class="row">
 
@@ -105,7 +186,7 @@
        
             </div>
         </div>
-    </section>
+    </section> -->
 
     <!-- <?php 
         if (!isset($_SESSION['user']) || isset($_SESSION['user']) && $_SESSION['user']['rights']=='user')  {
@@ -118,4 +199,117 @@
 
 
 </body>
+<style>
+    .main__title{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #000000;
+    font-size: 30px;
+    font-weight: 750;
+    line-height: 40px;
+    margin-bottom: 60px;
+}
+.main__title1{
+    color: #C5C5C5;
+}
+.project {
+    padding-top: 100px;
+    background-color: #F9F9F9;
+    padding-bottom: 100px;
+}
+.project1{
+    background-color: #efefef;
+}
+.project__item {
+    margin-bottom: 36px;
+    background-color: #ffffff;
+    border-radius: 23px;
+    color: #000000;
+    text-align: center;
+    padding-top: 12px;
+    padding-bottom: 21px;
+    box-shadow: 0px 5px 10px rgb(196, 199, 200);
+   
+}
+.project__item{
+    background-color: #ffffff;
+}
+.project__item .col-auto {
+    padding: 0px;
+}
+.project__img {
+    width: 90%;
+    margin-bottom: 8px;
+    border-radius: 10px;
+}
+.project__inlain {
+    display: var(--inline-block);
+    /* margin-right: 8px; */
+    vertical-align: middle;
+}
+.project__inlain:last-child {
+    margin-right: 0px;
+}
+.project__logo {
+  width: 9px;
+  height: 15.5px;
+  vertical-align: middle;
+  margin-right: 5px;
+}
+.project__title {
+    color: #0D0C22;
+    font-weight: 700;
+    text-align: left;
+    margin-left: 14px;
+    font-size: 20px;
+}
+.project__category {
+    color: #CCC;
+    font-size: 16px;
+    line-height: 10px; /* 100% */
+    border-radius: 3px;
+    padding: 3px;
+    /* display: var(--inline-block); */
+    text-align: left;
+    margin-left: 12px;
+}
+.project__price{
+    display: flex; 
+    flex-direction: row; 
+    align-items: center; 
+    margin-left: 14px;
+    margin-top: 5px;
+    font-weight: 700;
+    margin-bottom: 15px;
+   
+}
+.project__btn{
+    text-transform: uppercase;
+   
+}
+.project__like, .project__glass {
+    display: var(--inline-block);
+    position: relative;
+    padding-left: 17px;
+}
+.project__like {
+  margin-right: 8px;  
+}
+.project__like::before, .project__glass::before {
+    position: absolute;
+    content: '';
+    width: 14px;
+    height: 14px;
+    left: 0;
+    top: 3px;
+}
+.project__like::before {
+    background: url('../img/like.svg') no-repeat;
+}
+.project__glass::before {
+    background: url('../img/glass.svg') no-repeat;
+}
+</style>
+
 </html>

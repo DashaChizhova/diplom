@@ -46,7 +46,7 @@ if(isset($_SESSION['user']['id'])){
                        <div>
                        
                       
-                       <div class="title-lite"> <input type="checkbox" id="checkbox" class="checkbox" name="academ" value="1"   />Академическая</div>
+                       <div class="title-lite"> <input  type="checkbox" id="checkbox" class="checkbox" name="academ" value="1"   />Академическая</div>
                         <div class="title-lite"> <input type="checkbox" id="checkbox" class="checkbox" name="social" value="1"   />Социальная</div>
                        
                         <div class="title-lite"><input type="checkbox" id="checkbox" class="checkbox" name="upacadem" value="1" />Повышенная академическая</div>

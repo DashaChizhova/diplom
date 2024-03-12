@@ -18,7 +18,7 @@ a {
 
 .nav {
     padding: 20px 0px;
-    background-color: #000;
+    background-color: #ffffff;
 }
 .nav__item {
     display: inline-block;
@@ -26,14 +26,16 @@ a {
 }
 .nav__item:last-child {
     margin-right: 0px;
+    /* box-shadow: 0px 5px 10px rgb(196, 199, 200); */
 }
 .nav__link__logo{
     font-weight: 900;
-    color: #ffffff;
+    color: #000000;
    
 }
 .nav__link, .nav__sign {
-    color: #a9a9ae;
+    color: #000000;
+    text-transform:uppercase;
   
 }
 .nav__sign {
@@ -42,10 +44,12 @@ a {
 }
 .nav__btn {
     border-radius: 8px;
-    background: #ffffff;
+    background: #000000;
     padding: 12px 16px;
-    color: #000000;
+    color: #ffffff;
+    text-transform:uppercase;
     /* box-shadow: 2px 2px 22px 2px rgb(255, 255, 255);; */
+    box-shadow: 0px 5px 10px rgb(196, 199, 200);
 }
 .nav__img {
     vertical-align: middle;
@@ -66,81 +70,121 @@ a {
   }
 
 
-.header {
-    background: url('../img/fon.jpg') no-repeat;
+  .header {
+    
     background-position: center;
     background-size: cover;
     padding-top: 50px;
     padding-bottom: 84px;
-    text-align: center;
+   
+    
+   
 }
 .header__item {
-    display: inline-block;
-    margin-right: 14px;
+    display: flex;
+    margin-right: 255px;
 }
-.header__item:last-child {
-    margin-right: 0px;
+
+.header__hr{
+    width: 130px;  
+    float: left;
+    height: 1px;
 }
-.header__link {
-    border-radius: 50px;
-    background: rgba(0, 0, 0, 0.50);
-    padding: 16px 20px;
-    color: #FFF;
-    font-size: 16px;
-}
-.header__link:hover {
-    background: #FFF;
-    color: #000;
-}
+
 .header__utp {
     margin-top: 55px;
+    width: 45%;
+}
+.header__imgs {
+  width: 55%;
+  text-align: right;
 }
 .header__title {
-    color: #FFF;
-    font-size: 32px;
-    font-weight: 700;
+    color: #000000;
+    font-size: 50px;
+    font-weight: 750;
     line-height: 40px;
     margin-bottom: 21px;
+    margin-top: 10px;
 }
 .header__subtitle {
-    color: #FFF;
+    color: #676767;
     font-size: 16px;
-    line-height: 28px
+    line-height: 28px;
+    margin-bottom: 20px;
 }
-.header__search {
-    margin-top: 46px;
-}
+
 .header__form-input {
-    border-radius: 50px;
-    background: #F3F3F4;
-    padding: 0px 56px;
-    height: 58px;
-    width: 600px;
+    border-radius: 11px;
+    background: #f6f6f6;
     border: 1px solid #F3F3F4;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    box-shadow: 0px 2px 2px rgb(149, 149, 149);
 }
-.header__tag {
-    margin-top: 45px;
+
+input[type=search]::placeholder {
+    color: #9E9EA7;
+    line-height: normal;
+    font-size: 10px;
 }
-.header__tag-item {
-    display: inline-block;
-    vertical-align: middle;
-    margin-right: 16px;
+.k__ul{
+    margin-top: 40px;
 }
-.header__tag-item:last-child {
-    margin-right: 0;
+.k__number{
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 40px;
 }
-.header__tag-text {
-    color: #FFF;
-    font-size: 12px;
-    line-height: 16px; 
-    margin-right: 10px;
+.k__caption{
+    color: #676767;
+    font-size: 10px;
 }
-.header__tag-link {
-    border-radius: 50px;
-    border: 1px solid rgba(255, 255, 255, 0.60);
-    padding: 7px 16px;
-    color: #FFF;
+.header__img{
+    width: 270px;
+    height: 280px;
+    box-shadow: 0px 35px 55px -15px rgb(185, 204, 212);
+    border-radius: 10%;
 }
+
+.head__btn{
+  
+    background: #ffffff;
+    padding: 13px 19px;
+    color: #000000;
+    font-size: 20px;
+    font-weight: 900;
+    box-shadow: 0px 5px 10px rgb(196, 199, 200);
+    
+}
+.head__btn__left{
+    border-top-left-radius: 11px;
+    border-bottom-left-radius: 11px;
+}
+.head__btn__right{
+    border-top-right-radius: 11px;
+    border-bottom-right-radius: 11px;
+   
+    
+}
+.header__img1{
+    margin-bottom: 95px;
+    margin-right: 20px;
+}
+.header__img2{
+    margin-bottom: 35px;
+   
+}
+.head__stick{
+    color:  #E6E8EC;
+    font-weight: 900;
+}
+.arrow{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 
 input[type=search]::placeholder {
     color: #9E9EA7;
@@ -268,6 +312,13 @@ input[type=search]::placeholder {
     /* margin: 60px 0px; */
     background: url(../img/books.jpg) no-repeat;
     background-size: cover;
+}
+.title-lite{
+    color: #3D3D4E;
+    font-size: 18px;
+    line-height: 24px;
+    margin-top: 10px;
+    margin-bottom: 20px;
 }
 .form__shadow {
     
