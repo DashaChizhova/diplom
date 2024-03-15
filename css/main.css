@@ -75,7 +75,7 @@ a {
     background-position: center;
     background-size: cover;
     padding-top: 50px;
-    padding-bottom: 84px;
+    padding-bottom: 200px;
    
     
    
@@ -383,9 +383,20 @@ input[type=search]::placeholder {
     background-size: cover;
     box-shadow: 0px 4px 0px 0px rgba(0, 0, 0, 0.25); 
 }
+.lk__img{
+    
+    background: url("../img/books.png") no-repeat;
+    height: 300px;
+    background-position: center;
+    background-size: 100%;
+    border-radius: 23px;
+    z-index: -1;
+    box-shadow: 2px 2px 21px -5px rgb(149, 149, 149);
+  
 
+}
 
-.article {
+/* .article {
     margin-top: 71px;
     margin-bottom: 100px;
 }
@@ -527,6 +538,199 @@ margin-bottom: 30px;
     color: #FFF;
 }
 
+
+.lk__ed {
+    color: #EA4C89;
+    margin-right: 15px;
+    display: inline-block;
+    font-weight: 700;
+}
+.lk__del {
+    color: #9E9EA7;
+    display: inline-block;
+} */
+
+.article {
+    margin-top: 71px;
+    padding-bottom: 150px;
+}
+.bread {
+    margin-bottom: 40px;
+}
+.bread__item {
+    display: inline-block;
+    color: #6E6D7A;
+}
+.bread__link {
+    color: #121416;
+    font-weight: 700;
+    line-height: normal;
+}
+.bread__img {
+    vertical-align: middle;
+}
+
+.article__title {
+    color: #121416;
+    font-size: 48px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+    line-height: 56px;
+}
+.article__subtitle {
+    color: #121416;
+    font-size: 36px;
+    font-weight: 400;
+    line-height: 44px;
+    letter-spacing: -0.9px;
+    margin-bottom: 30px;
+}
+.article__img {
+width: 100%;
+max-height: 550px;
+margin-bottom: 30px;
+
+}
+.article__txt p {
+    color: #121416;
+    font-size: 20px;
+    line-height: 33px;
+}
+
+.article__block {
+    
+   
+  
+    box-sizing: border-box;
+}
+.article__name {
+    color: #0D0C22;
+    color: #000000;
+    font-size: 40px;
+    font-weight: 750;
+    line-height: 40px;
+   margin-bottom: 15px;
+}
+.article__logo {
+    margin-bottom: 34px;
+    width: 165px;
+    height: 165px;
+    object-fit: cover;
+    border-radius: 50%;
+    box-shadow: 2px 2px 21px -5px rgb(149, 149, 149);
+
+}
+.article__mintext {
+    color: #6C757D;
+    font-size: 20px;
+    line-height: 24px;
+    margin-bottom: 24px;
+    margin-top: 10px;
+}
+.article_info{
+    display: flex;
+    flex-direction: row;
+   justify-content: space-between;
+  
+}
+.follow__block{
+    padding-top: 54px;
+}
+.article__right {
+    padding-right: 60px;
+    box-sizing: border-box;
+}
+.lk__ul{
+    margin-top: 0;
+}
+.lk__img{
+    
+    background: url("../img/books.jpg") no-repeat;
+    height: 300px;
+    background-position: center;
+    background-size: 100%;
+    border-radius: 23px;
+    z-index: -1;
+    box-shadow: 2px 2px 21px -5px rgb(149, 149, 149);
+    
+  
+  
+
+}
+
+
+
+.article__list {
+    margin-bottom: 24px;
+}
+.article__type {
+    display: inline-block;
+    margin-right: 10px;
+    vertical-align: middle;
+    color: #121416;
+    font-size: 16px;
+    letter-spacing: 0.32px;
+    text-transform: lowercase;
+    position: relative;
+    padding-left: 30px;
+}
+.article__type img {
+    vertical-align: middle;
+    margin-right: 5px;
+}
+.article__type:nth-child(1) img {
+    margin-top: -5px;
+}
+.article__type:nth-child(2) img {
+    margin-top: -5px;
+}
+.article__type::before {
+    position: absolute;
+    content: '';
+    background: url('../img/line.png') no-repeat;
+    width: 20px;
+    height: 1px;
+    left: 0;
+    top: 9px;
+}
+
+
+.lk__list {
+    padding-bottom: 20px;
+    border-bottom: 1px solid #E7E7E9;
+    margin-bottom: 60px;
+}
+.lk__item {
+    display: inline-block;
+    margin-right: 30px;
+}
+.lk__link {
+    border-radius: 8px;
+    padding: 12px 16px;
+    color: #000000;
+    display: inline-block;
+    
+}
+.article__left {
+    padding-left: 80px;
+    box-sizing: border-box;
+    padding-top: 50px;
+}
+.lk__link__active {
+    border-radius: 8px;
+   
+    padding: 12px 16px;
+    color: #000000;
+    font-weight: 800;
+}
+.lk__info{
+    position: relative;
+    bottom: 100px;
+    padding-left: 50px;
+   
+}
 
 .lk__ed {
     color: #EA4C89;

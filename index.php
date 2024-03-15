@@ -45,13 +45,13 @@
 
                 <div class="header__utp header__imgs">
                   <img class="header__img header__img1" src="uploads_images/student.png" alt="nft">
-                  <img class="header__img header__img2" src="uploads_images/student.png" alt="nft">
+                  <img class="header__img header__img2" src="uploads_images/ava.png" alt="nft">
                  
                  
-                    <div class="arrow">
+                    <!-- <div class="arrow">
                         <a href="reg.php" class="head__btn head__btn__left">←</a>
                         <a href="reg.php" class="head__btn head__btn__right">→</a>
-                   </div>
+                   </div> -->
                 
                 </div>
             </div>
@@ -98,24 +98,66 @@
     </header> -->
     <section class="project project1">
         <div class="main__title main__title1">
-           <h1>Новости и объявления</h1>
+           <!-- <h1>Новости и объявления</h1> -->
+        </div>
+        <div class="container">
+          <div class="row justify__content__between align__items__center ">
+          
+            <?php 
+			
+            $sql = "SELECT *
+            FROM project 
+            ";
+            $res = $mysqli -> query($sql);
+
+            if($res -> num_rows > 0) {
+                while($resArticle = $res -> fetch_assoc()) {
+            
+        ?>  <a href="#" class="project__border">
+               <div class="project__item">
+                  <img class="project__img" src="img/<?= $resArticle['image'] ?>" alt="">
+                  <div style="width: 50%">
+                  <h2 class="project__title"><?= $resArticle['title'] ?></h2>
+                        <br>
+                        <h3 class="project__price" ><?= $resArticle['text'] ?></h3>
+                  </div>
+                        
+                        <!-- <div class="project__price" >
+                            <img class="project__logo" src="img/<?= $resArticle['image'] ?>" alt=""> 
+                            <h2 class="">1.75</h2>
+                        </div>  -->
+                        <!-- <a href="#" class="nav__btn project__btn">Place Bid</a>  -->
+                   
+                    </div>
+                    </a>
+                    <?php } } ?>
+          
+         	
+        </div>
         </div>
       
        <div class="arrow">
             <a href="reg.php" class="head__btn head__btn__left">←</a>
             <a href="reg.php" class="head__btn head__btn__right">→</a>
+         
+          
        </div>
+       <?php  if  (isset($_SESSION['user']) && $_SESSION['user']['rights']=='admin')  { ?>
+
+
+<li class="nav__item"><a href="add_news.php" class="nav__btn">Добавить новость</a></li>
+<?php } ?>
            
     </section>
-    <section class="project project1" style="background-color: white">
+    <!-- <section class="project project1" style="background-color: white">
         <div class="main__title main__title1">
            <h1>Условия получения стипендий</h1>
         </div>
-        <!-- <div class="container">
+        <div class="container">
             <div class="row">
                 <div class="col-3 project__item">
                     <a href="#" class="project__border"><img class="project__img" src="img/mountains.png" alt=""></a>
-                        <h2 class="project__title">Sun-Glass</h2>
+                        <h2 class="project__title"></h2>
                         <br>
                         <h3 class="project__category" >Current bid</h3>
                         <div class="project__price" >
@@ -126,22 +168,22 @@
                 </div>
             </div>
         </div> -->
-       <div class="arrow">
+       <!-- <div class="arrow">
             <a href="reg.php" class="head__btn head__btn__left">←</a>
             <a href="reg.php" class="head__btn head__btn__right">→</a>
-       </div>
+       </div> -->
            
-    </section>
-    <section class="project project1">
+    <!-- </section> -->
+    <section class="project project1 " style="background-color: white">
         <div class="main__title main__title1">
            <h1>Контактная информация</h1>
         </div>
-      
-       <div class="arrow">
-            <a href="reg.php" class="head__btn head__btn__left">←</a>
-            <a href="reg.php" class="head__btn head__btn__right">→</a>
-       </div>
-           
+        <div class="container ">
+        <div class="row justify__content__between align__items__center">
+        <div style="position:relative;overflow:hidden;"><a href="https://yandex.ru/maps/org/ivanovskiy_gosudarstvenny_universitet_korpus_1/240938650644/?utm_medium=mapframe&utm_source=maps" style="color:#eee;font-size:12px;position:absolute;top:0px;">Ивановский государственный университет, корпус № 1</a><a href="https://yandex.ru/maps/5/ivanovo/category/university/184106140/?utm_medium=mapframe&utm_source=maps" style="color:#eee;font-size:12px;position:absolute;top:14px;">ВУЗ в Иванове</a><iframe src="https://yandex.ru/map-widget/v1/?ll=40.957982%2C57.018631&mode=poi&poi%5Bpoint%5D=40.958177%2C57.019122&poi%5Buri%5D=ymapsbm1%3A%2F%2Forg%3Foid%3D240938650644&z=18" width="560" height="400" frameborder="1" allowfullscreen="true" style="position:relative;"></iframe></div>
+        </div>
+       
+        </div>
        </section>
 
     <!-- <section class="proect">
@@ -223,25 +265,29 @@
 }
 .project__item {
     margin-bottom: 36px;
-    background-color: #ffffff;
+    /* background-color: #ffffff; */
     border-radius: 23px;
     color: #000000;
     text-align: center;
-    padding-top: 12px;
-    padding-bottom: 21px;
-    box-shadow: 0px 5px 10px rgb(196, 199, 200);
+   
+    padding: 30px  20px;
+    /* box-shadow: 0px 5px 10px rgb(196, 199, 200); */
+   
+display: flex;
+justify-content: space-around;
+align-items: center;
+   
    
 }
-.project__item{
-    background-color: #ffffff;
-}
+
 .project__item .col-auto {
     padding: 0px;
 }
 .project__img {
-    width: 90%;
+    width: 30%;
     margin-bottom: 8px;
     border-radius: 10px;
+    float: left;
 }
 .project__inlain {
     display: var(--inline-block);
@@ -258,11 +304,12 @@
   margin-right: 5px;
 }
 .project__title {
-    color: #0D0C22;
+    color: #000000;
     font-weight: 700;
     text-align: left;
-    margin-left: 14px;
+text-align: center;
     font-size: 20px;
+  
 }
 .project__category {
     color: #CCC;
@@ -275,13 +322,15 @@
     margin-left: 12px;
 }
 .project__price{
+
     display: flex; 
     flex-direction: row; 
     align-items: center; 
-    margin-left: 14px;
+  
     margin-top: 5px;
     font-weight: 700;
-    margin-bottom: 15px;
+    color: #000000;
+    text-align: center;
    
 }
 .project__btn{

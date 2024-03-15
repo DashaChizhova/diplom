@@ -31,7 +31,7 @@ include('include/db_connect.php');
             <h1 class="heading-title"> Калькулятор расчета <br />стипендии ВУЗа</h1>
             <p class="heading-desc"></p>
           </div>
-          <div class="calc-section">
+          <!-- <div class="calc-section">
             <label class="checkbox-wrapper title-bold section-title .section-title--vertical-center">
               <span class="title__inline">Имя:</span>
               
@@ -66,7 +66,7 @@ include('include/db_connect.php');
             </label>
             <input class="form-select" type="text" name="number"  id="inputIn">
            
-          </div>
+          </div> -->
           <div class="calc-section">
             <label class="checkbox-wrapper title-bold section-title">
               Курс обучения
