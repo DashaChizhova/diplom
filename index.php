@@ -33,7 +33,11 @@
                     <!-- <h1 class="header__title">Стипендия</h1> -->
                     <h2 class="header__subtitle">Узнайте всю информацию о своей стипендии </h2>
                     <br>
+                    <?php 
+                            if (!isset($_SESSION['user']) )  {
+                        ?>  
                     <li class="nav__item"><a href="aut.php" class="nav__btn">ВОЙТИ</a></li>
+                    <?php } ?>
                     <!-- <li class="nav__item"><a href="reg.php" class="nav__btn nav__btn2 ">Create NFT</a></li> -->
 
                     <!-- <ul class="k__ul">
@@ -61,20 +65,7 @@
     <!-- <header class="header">
         <div class="container">
             <div class="header__category">
-                <ul>
-                                               <?php 
-            
-            $sql = "SELECT * FROM `category`";
-            $res = $mysqli -> query($sql);
-
-            if($res -> num_rows > 0) {
-                while($resArticle = $res -> fetch_assoc()) {
-            
-        ?>
-                    <li class="header__item"><a href="category.php?id=<?=$resArticle['id']?>" class="header__link">
-                        <?=$resArticle['name']?></a></li>
-                   <?php } } ?>
-                </ul>
+              
             </div>
             <div class="header__utp">
                 <h1 class="header__title">Explore the world’s leading <br> design portfolios</h1>
@@ -96,9 +87,31 @@
             </div>
         </div>
     </header> -->
-    <section class="project project1">
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <!-- <section class="project project1">
         <div class="main__title main__title1">
-           <!-- <h1>Новости и объявления</h1> -->
+          
         </div>
         <div class="container">
           <div class="row justify__content__between align__items__center ">
@@ -120,14 +133,14 @@
                   <h2 class="project__title"><?= $resArticle['title'] ?></h2>
                         <br>
                         <h3 class="project__price" ><?= $resArticle['text'] ?></h3>
-                  </div>
+                  </div> -->
                         
                         <!-- <div class="project__price" >
                             <img class="project__logo" src="img/<?= $resArticle['image'] ?>" alt=""> 
                             <h2 class="">1.75</h2>
                         </div>  -->
                         <!-- <a href="#" class="nav__btn project__btn">Place Bid</a>  -->
-                   
+<!--                    
                     </div>
                     </a>
                     <?php } } ?>
@@ -148,7 +161,149 @@
 <li class="nav__item"><a href="add_news.php" class="nav__btn">Добавить новость</a></li>
 <?php } ?>
            
+    </section> -->
+
+
+
+
+<!-- ------------------------------------------------------------------------------------------------------------------------------------------ -->
+
+
+
+
+    <section class="project project1">
+        <div class="main__title main__title1">
+           <!-- <h1>Новости и объявления</h1> -->
+        </div>
+        <div class="container slider">
+          <div class="row slide">
+                  
+        <div class="header__utp header__imgs">
+                  <img class="project__img " src="" alt=""></div>
+                  <div class="header__utp" >
+                        <h2 class="project__title"></h2>
+                        <br>
+                        <h3 class="project__price" ></h3>
+                  </div>
+                        
+                </div>
+            </div>
+        </a>
+                  
+          
+         	
+        </div>
+        </div>
+      
+       <div class="arrow">
+            <button class="head__btn head__btn__left">←</button>
+            <button class="head__btn head__btn__right">→</button>
+         
+          
+       </div>
+       <?php  if  (isset($_SESSION['user']) && $_SESSION['user']['rights']=='admin')  { ?>
+
+
+<li class="nav__item"><a href="add_news.php" class="nav__btn">Добавить новость</a></li>
+<?php } ?>
+           
     </section>
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           <?php 
+			
+            $sql = "SELECT *
+            FROM project 
+            ";
+            $res = $mysqli -> query($sql);
+
+
+            $slidesData = array();
+            if($res -> num_rows > 0) {
+                while($resArticle = $res -> fetch_assoc()) {
+                    $slidesData[] = $resArticle;
+                }
+            }
+?>
+            <script>
+                const slidesData = <?php echo json_encode($slidesData); ?>; //json_encode - это функция в PHP, которая преобразует данные в формат JSON. 
+
+                const slider = document.querySelector('.slider');
+                const prevBtn = document.querySelector('.head__btn__left');
+                const nextBtn = document.querySelector('.head__btn__right');
+                let currentSlide = 1;
+
+                function showSlide(index){
+                    const slide = slider.querySelector('.slide');
+                    const image = slider.querySelector('.project__img');
+                    const title = slide.querySelector('.project__title');
+                    const text = slide.querySelector('.project__price');
+
+                    image.src =  slidesData[index].image;
+                    title.textContent = slidesData[index].title;
+                    text.textContent = slidesData[index].text;
+                }
+
+                showSlide(currentSlide);
+
+                prevBtn.addEventListener('click', () => {
+                    currentSlide = (currentSlide - 1 + slidesData.length) % slidesData.length;
+                    showSlide(currentSlide);
+                });
+                nextBtn.addEventListener('click', () => {
+                    currentSlide = (currentSlide + 1) % slidesData.length;
+                    showSlide(currentSlide);
+                });
+
+            </script>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     <!-- <section class="project project1" style="background-color: white">
         <div class="main__title main__title1">
            <h1>Условия получения стипендий</h1>
@@ -190,41 +345,7 @@
         <div class="container">
             <div class="row">
 
-            <?php 
-			
-				$sql = "SELECT t1.id, t1.image, t1.likes, t1.glass, t2.image AS userimage, 
-                t2.name AS username, t3.name AS category 
-                FROM project t1 
-                JOIN user t2 ON (t1.user_id = t2.id)
-                 JOIN category t3 ON (t1.category_id = t3.id) 
-                 ORDER BY t1.id;";
-				$res = $mysqli -> query($sql);
-
-				if($res -> num_rows > 0) {
-					while($resArticle = $res -> fetch_assoc()) {
-				
-			?>
-                <div class="col-4 proect__item">
-                    <a href="article.php?id=<?= $resArticle['id'] ?>" class="proect__border"><img class="proect__img" src="uploads_images/<?= $resArticle['image'] ?>" alt=""></a>
-                    <div class="row justify__content__between align__items__center">
-                        <a href="#" class="col-auto">
-                            <ul>
-                                <li class="proect__inlain"><img class="proect__logo" src="uploads_images/<?= $resArticle['userimage'] ?>" alt=""></li>
-                                <li class="proect__inlain"><h2 class="proect__title"><?= $resArticle['username'] ?></h2></li>
-                            </ul>
-                        </a>
-                        <div class="col-auto">
-                            <a class="proect__category" href="#"><?= $resArticle['category'] ?></a>
-                        </div>
-                        <div class="col-auto">
-                            <ul>
-                                <li class="proect__like"><?= $resArticle['likes'] ?></li>
-                                <li class="proect__glass"><?= $resArticle['glass'] ?></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <?php } } ?>	
+             
        
             </div>
         </div>
@@ -239,6 +360,9 @@
 <?php } ?> -->
     <?php include('include/footer.php'); ?>
 
+
+
+    
 
 </body>
 <style>
@@ -284,10 +408,13 @@ align-items: center;
     padding: 0px;
 }
 .project__img {
-    width: 30%;
+  
     margin-bottom: 8px;
     border-radius: 10px;
     float: left;
+    width: 600px; /* Фиксированная ширина блока слайдера */
+  height: 400px; /* Фиксированная высота блока слайдера */
+ 
 }
 .project__inlain {
     display: var(--inline-block);
@@ -309,6 +436,7 @@ align-items: center;
     text-align: left;
 text-align: center;
     font-size: 20px;
+    margin-top: 20%;
   
 }
 .project__category {
