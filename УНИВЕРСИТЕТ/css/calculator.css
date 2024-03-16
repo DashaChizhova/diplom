@@ -97,7 +97,7 @@ span{
   width: 17px;
   height: 17px;
   
-  background-image: url("../img/forcheckbox.svg");
+  background-image: url("../img/galka.png");
  
   background-size: contain;
   background-repeat: no-repeat;
@@ -122,6 +122,7 @@ span{
 .footer {
   padding-top: 5px;
   padding-bottom: 30px;
+  
 }
 
 .footer-cta-title {

@@ -39,7 +39,7 @@ checkboxaspirantyra.onchange = function(){
 
 //проверка чтобы в студенческий номер вводились только цифры
 
-let input = document.getElementById("inputIn");
-input.addEventListener('keyup', e => {
-  e.target.value = e.target.value.replace(/[^\d]/g, '');
-});
+// let input = document.getElementById("inputIn");
+// input.addEventListener('keyup', e => {
+//   e.target.value = e.target.value.replace(/[^\d]/g, '');
+// });

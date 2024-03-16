@@ -79,8 +79,8 @@ if(isset($_SESSION['user']['id'])){
         <h1>Контактная информация</h1>
     </div>
     <div class="container ">
-        <div class="row justify__content__between align__items__center">
-            <div style="position:relative;overflow:hidden;"><a href="https://yandex.ru/maps/org/ivanovskiy_gosudarstvenny_universitet_korpus_1/240938650644/?utm_medium=mapframe&utm_source=maps" style="color:#eee;font-size:12px;position:absolute;top:0px;">Ивановский государственный университет, корпус № 1</a><a href="https://yandex.ru/maps/5/ivanovo/category/university/184106140/?utm_medium=mapframe&utm_source=maps" style="color:#eee;font-size:12px;position:absolute;top:14px;">ВУЗ в Иванове</a><iframe src="https://yandex.ru/map-widget/v1/?ll=40.957982%2C57.018631&mode=poi&poi%5Bpoint%5D=40.958177%2C57.019122&poi%5Buri%5D=ymapsbm1%3A%2F%2Forg%3Foid%3D240938650644&z=18" width="560" height="400" frameborder="1" allowfullscreen="true" style="position:relative;"></iframe></div>
+        <div style="display: flex; align-items: center; justify-content: center">
+            <div style="position:relative;overflow: hidden"><a href="https://yandex.ru/maps/org/ivanovskiy_gosudarstvenny_universitet_korpus_1/240938650644/?utm_medium=mapframe&utm_source=maps" style="color:#eee;font-size:12px;position:absolute;top:0px;">Ивановский государственный университет, корпус № 1</a><a href="https://yandex.ru/maps/5/ivanovo/category/university/184106140/?utm_medium=mapframe&utm_source=maps" style="color:#eee;font-size:12px;position:absolute;top:14px;">ВУЗ в Иванове</a><iframe src="https://yandex.ru/map-widget/v1/?ll=40.957982%2C57.018631&mode=poi&poi%5Bpoint%5D=40.958177%2C57.019122&poi%5Buri%5D=ymapsbm1%3A%2F%2Forg%3Foid%3D240938650644&z=18" width="560" height="400" frameborder="1" allowfullscreen="true" style="position:relative;"></iframe></div>
         </div>
     </div>
 </section>

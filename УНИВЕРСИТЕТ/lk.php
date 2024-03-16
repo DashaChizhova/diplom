@@ -55,7 +55,7 @@ else {
             <div class="col-8 article__left">
                 <ul class="lk__list">
                     <li class="lk__item"><a class="lk__link lk__link__active " href="lk.php">Информация</a></li>
-                    <li class="lk__item"><a class="lk__link" href="lk-add.php">Начисления</a></li>
+                    <!-- <li class="lk__item"><a class="lk__link" href="lk-add.php">Начисления</a></li> -->
                 </ul>
                 
                 <?php 

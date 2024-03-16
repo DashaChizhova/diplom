@@ -19,6 +19,6 @@ $sql = "INSERT INTO `students` (`student_id`, `course_number`, `education_degree
         ('$student_id', '$course_number','$education_degree','$academ', NULL,'$social','$upacadem','$upsocial', '$military', '$namestep', '$president', '$needhelp')
 ";
 mysqli_query($mysqli, $sql);
-$_SESSION['message'] = 'Registration was successful!';
+// $_SESSION['message'] = 'Registration was successful!';
 header('Location: ../reg2.php');
 
