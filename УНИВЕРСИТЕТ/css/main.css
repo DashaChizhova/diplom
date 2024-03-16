@@ -724,3 +724,16 @@ margin-bottom: 30px;
     height: 50px;
 }
 /* ИНПУТ ДЛЯ ОТПРАВКИ ФОТО */
+
+/* TABLE */
+table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-bottom: 20px;
+}
+th, td {
+    border: 1px solid black;
+    padding: 8px;
+    text-align: center;
+}
+/* TABLE */

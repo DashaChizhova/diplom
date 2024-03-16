@@ -8,19 +8,12 @@ include('include/db_connect.php');
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Расчет стоимости стипендии</title>
+    <title>Расчет стипендии</title>
     <link rel="stylesheet" href="css/calculator.css" />
-  
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Kanit:wght@300&display=swap"
-      rel="stylesheet"
-    />
-   
-    
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300&display=swap" rel="stylesheet" />
   </head>
-
   <body>
 
   <form enctype="multipart/form-data" method="post" action="">
@@ -31,42 +24,6 @@ include('include/db_connect.php');
             <h1 class="heading-title"> Калькулятор расчета <br />стипендии ВУЗа</h1>
             <p class="heading-desc"></p>
           </div>
-          <!-- <div class="calc-section">
-            <label class="checkbox-wrapper title-bold section-title .section-title--vertical-center">
-              <span class="title__inline">Имя:</span>
-              
-              <span class="title__inline"></span>
-            </label>
-            <input class="form-select" type="text" name="name" id="myInput"  placeholder="Введите имя" required>
-           
-          </div>
-          <div class="calc-section">
-            <label class="checkbox-wrapper title-bold section-title .section-title--vertical-center">
-              <span class="title__inline">Фамилия:</span>
-              
-              <span class="title__inline"></span>
-            </label>
-            <input class="form-select" type="text" name="family" id="myInput"   placeholder="Введите фамилию">
-           
-          </div>
-          <div class="calc-section">
-            <label class="checkbox-wrapper title-bold section-title .section-title--vertical-center">
-              <span class="title__inline">Отчество:</span>
-              
-              <span class="title__inline"></span>
-            </label>
-            <input class="form-select" type="text" name="otchestvo" id="myInput"   placeholder="Введите отчество">
-           
-          </div>
-          <div class="calc-section">
-            <label class="checkbox-wrapper title-bold section-title .section-title--vertical-center">
-              <span class="title__inline">Номер студенческого:</span>
-              
-              <span class="title__inline"></span>
-            </label>
-            <input class="form-select" type="text" name="number"  id="inputIn">
-           
-          </div> -->
           <div class="calc-section">
             <label class="checkbox-wrapper title-bold section-title">
               Курс обучения
@@ -104,7 +61,6 @@ include('include/db_connect.php');
               </div>
             </div>
           </div>
-
           <div class="calc-section">
             <label class="checkbox-wrapper title-bold section-title .section-title--vertical-center">
               <span class="title__inline">Минимальная стипендия ВУЗа</span>
@@ -113,7 +69,6 @@ include('include/db_connect.php');
             </label>
             <input type="range"id="square-range"class="range-input"min="0" max="5000" value= "0" step="1"/>
           </div>
-
           <div class="calc-section">
             <h4 class="checkbox-wrapper title-bold section-title">
               Форма обучения
@@ -123,14 +78,7 @@ include('include/db_connect.php');
               <div class="title-lite">Бакалавриат/Спец.</div>
             </label>
             <label class="radio-wrapper" data-name="mobile">
-              <input
-                type="radio"
-                class="radio"
-                name="type"
-                value="3000"
-                id="checkboxmagistry"
-               
-              />
+              <input type="radio" class="radio" name="type" value="3000" id="checkboxmagistry" />
               <div class="title-lite">Магистратура</div>
             </label>
             <label class="radio-wrapper" data-name="mobile">
@@ -138,9 +86,6 @@ include('include/db_connect.php');
               <div class="title-lite">Аспирантура</div>
             </label>
           </div>
-
-         
-
           <div class="calc-section">
             <label class="checkbox-wrapper title-bold section-title">
               Оценки за предыдущую сессию
@@ -151,7 +96,6 @@ include('include/db_connect.php');
                 class="radio"
                 name="building"
                 value="0"
-               
               />
               <div class="title-lite">Еще нет оценок</div>
             </label>
@@ -168,15 +112,10 @@ include('include/db_connect.php');
               <div class="title-lite">Только "отл"</div>
             </label>
           </div>
-
           <div class="calc-section">
             <label class="checkbox-wrapper title-bold section-title">
               Доп стипендии стипендии
             </label>
-            <!-- <label class="radio-wrapper">
-              <input type="checkbox" class="radio" name="academ" value="0" />
-              <div class="title-lite">Академическая</div>
-            </label> -->
             <label class="radio-wrapper">
               <input type="checkbox" id="checkbox" class="checkbox" name="social" value="3500"   />
               <span class="custom-checkbox"></span>
@@ -207,24 +146,7 @@ include('include/db_connect.php');
               <span class="custom-checkbox"></span>
               <div class="title-lite">Стипендия президента</div>
             </label>
-
-            
           </div>
-
-          <!-- <div class="calc-section">
-            <label class="checkbox-wrapper title-bold section-title">
-              Доп стипендии
-            </label>
-
-            <select class="form-select">
-              <option value="empty">...</option>
-              <option value="academ">Повышенная академическая</option>
-              <option value="social">Повышенная социальная</option>
-              <option value="voennaya">Стипендия военной кафедры</option>
-              <option value="imennaya">Именная стипендия</option>
-              <option value="president">Стипендия президента</option>
-            </select>
-          </div> -->
           </form>
           <div class="calc-price">
             <div class="calc-price-title">Ваша стипендия:</div>
@@ -233,13 +155,9 @@ include('include/db_connect.php');
               рублей
             </div>
           </div>
-          <!-- <div class="heading">
-            <input class="form__btn" type="submit"  value="Send">
-          </div> -->
         </form>
       </div>
     </main>
-
     <footer class="footer footer-inner">
       <div class="container">
         <p class="footer-text">
@@ -247,7 +165,6 @@ include('include/db_connect.php');
         </p>
       </div>
     </footer>
-
     <script src="js/calculator__main.js"></script>
     <script src="js/calculator__notmain.js"></script>
   </body>

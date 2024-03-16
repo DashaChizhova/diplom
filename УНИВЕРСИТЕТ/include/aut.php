@@ -19,7 +19,6 @@ if(mysqli_num_rows($check_user) > 0) {
     ];
     header('Location: ../lk.php');
 } else {
-    
     $_SESSION['message'] = 'Неправильный логин или пароль!';
     header("Location: {$_SERVER['HTTP_REFERER']}");
 }

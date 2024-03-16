@@ -2,9 +2,9 @@
 session_start();
 include('include/db_connect.php');
 $id = $_GET["id"];
- $user = isset($_SESSION['user']['id']); 
-
+$user = isset($_SESSION['user']['id']); 
 $action = $_GET["action"];
+
 if (isset($action))
 {
    switch ($action) {
@@ -22,10 +22,8 @@ if (isset($action))
 	} 
 }
 
-
 if (isset($_POST["submit_add"]))
     {
-
       $error = array();
       if (count($error))
        {           
@@ -38,12 +36,12 @@ if (isset($_POST["submit_add"]))
         $date = $_POST['date']; $time = $_POST['time'];
         $category_id = $_POST['category_id']; $user_id = $user;
 
-$querynew = "title='$title', subtitle='$subtitle', text='$text', date='$date', 
-time='$time', user_id='$user_id', category_id='$category_id' ";
+        $querynew = "title='$title', subtitle='$subtitle', text='$text', date='$date', 
+        time='$time', user_id='$user_id', category_id='$category_id' ";
 
-$update ="UPDATE project SET $querynew WHERE id='$id' ";
+        $update ="UPDATE project SET $querynew WHERE id='$id' ";
 
-$result = mysqli_query($mysqli, $update) or die("Ошибка " . mysqli_error($mysqli));
+        $result = mysqli_query($mysqli, $update) or die("Ошибка " . mysqli_error($mysqli));
  
 //Если запрос пройдет успешно то в переменную result вернется true
 if ($result == 'true') {
@@ -60,10 +58,7 @@ else {echo "Ваши данные не добавлены";}
       unset($_POST["upload_image"]);           
       } 
       
-      
-      
-  } }   
-
+} }   
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -72,11 +67,9 @@ else {echo "Ваши данные не добавлены";}
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/setka.css">
     <link rel="stylesheet" href="css/main.css">
-
 </head>
 <body>
     
