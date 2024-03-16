@@ -39,8 +39,12 @@ if(isset($_SESSION['user']['id'])){
                                 </div>
                                
                                 <!-- <label class="stylelabel" >Изображение</label> -->
-                                <div><input class="form__input" type="file" name="avatar" placeholder="Your photo" id=""></div>
-
+                                <!-- <div><input class="form__input" type="file" name="avatar" placeholder="Your photo" id=""></div> -->
+                                <div><label class="input-file">
+                                        <input class="form__input"  type="file" name="avatar" >		
+                                        <span><img class="foto_reg" src="img/foto.png" alt=""></span>
+                                    </label>
+                                </div>
                                 
                                 <input class="form__btn" name="submit_add" type="submit" value="Создать">
                             </form>

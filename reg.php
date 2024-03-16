@@ -38,7 +38,11 @@ include('include/db_connect.php');
                         <div><input class="form__input" type="email" name="email" placeholder="Почта" id=""></div>
                         <div><input class="form__input" type="password" name="password" placeholder="Пароль" id=""></div>
                         <div><input class="form__input" type="password" name="repeat_password" placeholder="Повторите пароль" id=""></div>
-                        <div><input class="form__input" type="file" name="avatar" placeholder="Your photo" id=""></div>
+                        <!-- <div><input class="form__input" type="file" name="avatar" placeholder="Your photo" ></div> -->
+                        <div><label class="input-file">
+                            <input class="form__input"  type="file" name="avatar" >		
+                            <span><img class="foto_reg" src="img/foto.png" alt=""></span>
+                        </label></div>
                         <div><input type="text" name="rights" value="user" style="display: none;" id=""></div>
                         <input class="form__btn" type="submit" value="Регистрация">
                     </form>
@@ -61,4 +65,5 @@ include('include/db_connect.php');
 
 
 </body>
+
 </html>

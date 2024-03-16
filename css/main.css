@@ -50,6 +50,7 @@ a {
     text-transform:uppercase;
     /* box-shadow: 2px 2px 22px 2px rgb(255, 255, 255);; */
     box-shadow: 0px 5px 10px rgb(196, 199, 200);
+    cursor: pointer;
 }
 .nav__img {
     vertical-align: middle;
@@ -75,7 +76,7 @@ a {
     background-position: center;
     background-size: cover;
     padding-top: 50px;
-    padding-bottom: 200px;
+    padding-bottom: 100px;
    
  
    
@@ -155,15 +156,19 @@ input[type=search]::placeholder {
     font-size: 20px;
     font-weight: 900;
     box-shadow: 0px 5px 10px rgb(196, 199, 200);
+    border: unset;
+    cursor: pointer;
     
 }
 .head__btn__left{
     border-top-left-radius: 11px;
     border-bottom-left-radius: 11px;
+    cursor: pointer;
 }
 .head__btn__right{
     border-top-right-radius: 11px;
     border-bottom-right-radius: 11px;
+    cursor: pointer;
    
     
 }
@@ -184,8 +189,12 @@ input[type=search]::placeholder {
     align-items: center;
     justify-content: center;
     margin-top: 80px;
-}
+    flex-direction: column;
 
+}
+.add_news_button{
+    margin-top: 30px;
+}
 
 input[type=search]::placeholder {
     color: #9E9EA7;
@@ -349,7 +358,7 @@ input[type=search]::placeholder {
 .form__input {
     height: 56px;
     border-radius: 8px;
-    border: 1px solid #E1E1E6;
+    border: 1px solid #000000;
     padding: 0px 16px;
     color: #9E9EA7;
     width: 100%;
@@ -365,6 +374,7 @@ input[type=search]::placeholder {
     padding: 0px 26px;
     margin-top: 10px;
     color: #FFF;
+    cursor: pointer;
 }
 .form__polit {
     color: #6E6D7A;
@@ -743,3 +753,48 @@ margin-bottom: 30px;
     color: #9E9EA7;
     display: inline-block;
 }
+/* ИНПУТ ДЛЯ ОТПРАВКИ ФОТО */
+.input-file {
+	/* position: relative;
+	display: inline-block; */
+   
+}
+.input-file span {
+	position: relative;
+	display: inline-block;
+	cursor: pointer;
+	outline: none;
+	text-decoration: none;
+	vertical-align: middle;
+	color: rgb(255 255 255);
+	text-align: center;
+	border-radius: 8px;
+	box-sizing: border-box;
+	border: none;
+	margin: 0;
+	transition: background-color 0.2s;
+    font-size: 18px;
+    line-height: 24px;
+    
+}
+.input-file input[type=file] {
+	position: absolute;
+	z-index: -1;
+	opacity: 0;
+	display: block;
+	width: 0;
+	height: 0;
+    
+}
+ 
+
+ 
+/* Disabled */
+.input-file input[type=file]:disabled + span {
+	background-color: #eee;
+}
+.foto_reg{
+    width: 50px;
+    height: 50px;
+}
+/* ИНПУТ ДЛЯ ОТПРАВКИ ФОТО */

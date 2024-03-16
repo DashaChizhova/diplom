@@ -196,16 +196,16 @@
         </div>
       
        <div class="arrow">
-            <button class="head__btn head__btn__left">←</button>
-            <button class="head__btn head__btn__right">→</button>
-         
-          
-       </div>
-       <?php  if  (isset($_SESSION['user']) && $_SESSION['user']['rights']=='admin')  { ?>
+            <div><button class="head__btn head__btn__left">←</button>
+            <button class="head__btn head__btn__right">→</button></div>
+       
+            <?php  if  (isset($_SESSION['user']) && $_SESSION['user']['rights']=='admin')  { ?>
 
 
-<li class="nav__item"><a href="add_news.php" class="nav__btn">Добавить новость</a></li>
+<div class="add_news_button"><li class="nav__item"><a href="add_news.php" class="nav__btn">Добавить новость</a></li></div>
 <?php } ?>
+       </div>
+      
            
     </section>
            
