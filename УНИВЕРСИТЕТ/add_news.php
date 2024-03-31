@@ -28,7 +28,7 @@ if(isset($_SESSION['user']['id'])){
                 <form enctype="multipart/form-data" method="post" action="include/add_news.php">
                     <div><input class="form__input" type="text" name="title" placeholder="Заголовок" id=""></div>
                     <div>
-                        <textarea class="form__input" name="text" id="" cols="30" rows="10" ></textarea>
+                        <textarea style="height:200px" class="form__input" name="text" id="" cols="30" rows="50" ></textarea>
                     </div>
                     <div><label class="input-file">
                             <input class="form__input"  type="file" name="avatar" >		

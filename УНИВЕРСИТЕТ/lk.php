@@ -30,36 +30,25 @@ else {
         </div>
         <div class="row ">
             <div class="col-4 lk__info">
-                <?php
-                    $sql = "SELECT * FROM `user` WHERE `id`='$user'";
-                    $res = $mysqli -> query($sql);
-
-                    if($res -> num_rows > 0) {
-                        while($resArticle = $res -> fetch_assoc()) {
-                ?>    
-                <img class="article__logo" src="<?=  $resArticle['image'] ?>" alt="">
-                <div class="article_info">
-                    <div><h2 class="article__name"> <br> <?=  $resArticle['name'] ?> <?=  $resArticle['surname'] ?></h2></div >
-                    <div class="follow__block"><a class="nav__btn follow__btn" href="lk-about.php?id=<?= $user ?>" >Редактировать </a></div>
-                    <?php }} ?>
-                </div>
-                <ul>
-                    <li class="footer__item"><a href="#" class="footer__link"><img  src="img/lksoc/inst.png" alt=""></a></li>
-                    <li class="footer__item"><a href="#" class="footer__link"><img  src="img/lksoc/twi.png" alt=""></a></li>
-                    <li class="footer__item"><a href="#" class="footer__link"><img  src="img/lksoc/facebook.png" alt=""></a></li>
-                </ul>
-                <hr>
-                <p class="article__mintext">  <?php include('include/about.php'); ?></p>
-                <hr>
+                <?php include('include/lk_info.php'); ?>
             </div>
             <div class="col-8 article__left">
                 <ul class="lk__list">
                     <li class="lk__item"><a class="lk__link lk__link__active " href="lk.php">Информация</a></li>
-                    <!-- <li class="lk__item"><a class="lk__link" href="lk-add.php">Начисления</a></li> -->
+                    <li class="lk__item"><a class="lk__link" href="lk-add.php">Начисления</a></li>
                 </ul>
+                <table  >
+            <tr>
+                <th>Курс обучения</th>
+                <th>Степень обучения</th>
+                <th>Средний балл</th>
+                <th>Стипендии</th>
+                
+            </tr>
                 
                 <?php 
                     $sql = "SELECT *,
+                    t3.student_score AS score,
                     CASE 
                             WHEN t1.academ = 1 THEN 'Академическая'
                             ELSE ''
@@ -95,6 +84,7 @@ else {
 
                     FROM students t1 
                     JOIN user t2 ON (t1.student_id = t2.student_id )
+                    JOIN score t3 ON (t1.student_id = t3.student_id )
                     WHERE t2.id='$user' 
                     ORDER BY t1.id;";
                     $res = $mysqli -> query($sql);
@@ -102,17 +92,30 @@ else {
                     if($res -> num_rows > 0) {
                         while($resArticle = $res -> fetch_assoc()) {
                 ?>
-                    <div class="article__block">
+                    <!-- <div class="article__block">
                         <p class="article__mintext" style="font-weight: bold">Курс обучения: </p>  <p class="article__mintext"><?=  $resArticle['course_number'] ?> </p> 
                         <p class="article__mintext" style="font-weight: bold">Степень обучения: </p>  <p class="article__mintext"><?=  $resArticle['education_degree'] ?> </p> 
+                        <p class="article__mintext" style="font-weight: bold">Средний балл: </p>  <p class="article__mintext"><?=  $resArticle['score'] ?> </p> 
                         <p class="article__mintext" style="font-weight: bold">Стипендии: </p>  
                         <p class="article__mintext">
                             <?= $resArticle['academ'] ?> <?= $resArticle['social'] ?> <?= $resArticle['upacadem'] ?>
                             <?= $resArticle['upsocial'] ?> <?= $resArticle['military'] ?> <?= $resArticle['namestep'] ?> 
-                            <?= $resArticle['president'] ?><?= $resArticle['needhelp'] ?> 
+                            <?= $resArticle['president'] ?> <?= $resArticle['needhelp'] ?> 
                         </p> 
-                    </div>
-                <?php }} ?>
+                    </div> -->
+                    <tr>
+                   
+                    <td><?=  $resArticle['course_number'] ?></td>
+                    <td><?=  $resArticle['education_degree'] ?></td>
+                    <td><?=  $resArticle['score'] ?> </td>
+                    <td>  <?= $resArticle['academ'] ?> <?= $resArticle['social'] ?> <?= $resArticle['upacadem'] ?>
+                            <?= $resArticle['upsocial'] ?> <?= $resArticle['military'] ?> <?= $resArticle['namestep'] ?> 
+                            <?= $resArticle['president'] ?> <?= $resArticle['needhelp'] ?> </td>
+                   
+                </tr>
+            <?php } } ?>	
+
+        </table>
             </div>
         </div>
     </div>

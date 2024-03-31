@@ -14,7 +14,7 @@
                         <!-- <li class="nav__item"><a href="#"class="nav__link">Начисления</a></li> -->
                     <?php  }  else if  (isset($_SESSION['user']) && $_SESSION['user']['rights']=='admin')  { ?>
                         <li class="nav__item"><a href="studentslist.php"class="nav__link">Список студентов</a></li>
-                        <!-- <li class="nav__item"><a href="fond.php"class="nav__link">Годовой фонд</a></li> -->
+                        <li class="nav__item"><a href="fond.php"class="nav__link">Годовой фонд</a></li>
                         <li class="nav__item"><a href="reg2.php"class="nav__link">Создать студента</a></li>
                         <li class="nav__item"><a href="add_news.php"class="nav__link">Добавить новость</a></li>
                         <?php } ?>

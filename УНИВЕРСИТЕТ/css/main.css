@@ -21,6 +21,7 @@ a {
 .nav {
     padding: 20px 0px;
     background-color: #ffffff;
+   
 }
 
 .nav__item {
@@ -51,6 +52,12 @@ a {
     color: #ffffff;
     text-transform:uppercase;
     box-shadow: 0px 5px 10px rgb(196, 199, 200);
+    cursor: pointer;
+}
+.red__btn{
+    padding: 12px 16px;
+    color: #ffffff;
+    text-transform:uppercase;
     cursor: pointer;
 }
 .nav__img {
@@ -315,7 +322,7 @@ input[type=search]::placeholder {
 
 .proect {
     padding-top: 100px;
-    padding-bottom: 100px;
+    padding-bottom: 200px;
 }
 .proect__item {
     margin-bottom: 36px;
@@ -428,6 +435,9 @@ input[type=search]::placeholder {
     /* margin: 60px 0px; */
     background: url(../img/books.jpg) no-repeat;
     background-size: cover;
+    padding-top: 100px;
+    padding-bottom: 200px;
+    
 }
 .title-lite{
     color: #3D3D4E;
@@ -577,7 +587,7 @@ margin-bottom: 30px;
 
 }
 .article__mintext {
-    color: #6C757D;
+    color: #000000;
     font-size: 20px;
     line-height: 24px;
     margin-bottom: 24px;
@@ -590,7 +600,7 @@ margin-bottom: 30px;
   
 }
 .follow__block{
-    padding-top: 54px;
+    padding-top: 53px;
 }
 .article__right {
     padding-right: 60px;
@@ -658,6 +668,7 @@ margin-bottom: 30px;
     padding: 12px 16px;
     color: #000000;
     display: inline-block;
+    font-family: 'Arial', sans-serif;
 }
 .article__left {
     padding-left: 80px;
@@ -721,8 +732,8 @@ margin-bottom: 30px;
 	background-color: #eee;
 }
 .foto_reg{
-    width: 50px;
-    height: 50px;
+    width: 20px;
+    height: 20px;
 }
 /* ИНПУТ ДЛЯ ОТПРАВКИ ФОТО */
 
@@ -737,7 +748,59 @@ th, td {
     padding: 8px;
     text-align: center;
 }
+.td_button{
+    border: none;
+    background-color: white;
+   
+}
 /* TABLE */
 .hidden {
     display: none;
 }
+table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  th, td {
+    border: 1px solid #838383;
+    padding: 8px;
+  }
+  
+  th {
+    background-color: #000000;
+    color: white;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  tr:hover {
+    background-color: #d9d9d9;
+  }
+
+  .select-box {
+    position: relative;
+    display: inline-block;
+   
+  }
+  
+  .select-box select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .select-box::before {
+    content: "\25BC";
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+  }
+
