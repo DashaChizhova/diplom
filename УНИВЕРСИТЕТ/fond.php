@@ -151,6 +151,7 @@ else {
 </section>
 
 <?php include('include/footer.php'); ?>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
     const count_field = document.querySelector('input[name="count_field"]');
     const count_btn = document.querySelector('#count_btn');
@@ -207,6 +208,7 @@ else {
 
         
     }
+
 
 </script>
 </body>

@@ -7,11 +7,12 @@
                     <li class="nav__item"><a href="index.php" class="nav__link">Главная</a></li>
                     <?php   if  (!isset($_SESSION['user']) || isset($_SESSION['user']) && $_SESSION['user']['rights'] =='user')  { ?>
                         <li class="nav__item"><a href="calculator.php" class="nav__link" target="_blank">Калькулятор</a></li>
+                       
                     <?php } ?>
                     <?php 
                         if (isset($_SESSION['user']) && $_SESSION['user']['rights']=='user')  {
                     ?>  
-                        <!-- <li class="nav__item"><a href="#"class="nav__link">Начисления</a></li> -->
+                        <li class="nav__item"><a class="nav__link" href="lk-add.php">Начисления</a></li>
                     <?php  }  else if  (isset($_SESSION['user']) && $_SESSION['user']['rights']=='admin')  { ?>
                         <li class="nav__item"><a href="studentslist.php"class="nav__link">Список студентов</a></li>
                         <li class="nav__item"><a href="fond.php"class="nav__link">Годовой фонд</a></li>

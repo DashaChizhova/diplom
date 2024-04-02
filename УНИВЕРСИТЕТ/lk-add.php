@@ -61,83 +61,121 @@ unset($_POST["upload_image"]);
 </head>
 <body>
     
+    
 <?php include('include/nav.php'); ?>
 
-    <article class="article">
-        <div class="container">
-            <div class="row bread">
-                <ul>
-                    <li class="bread__item"><a class="bread__link" href="index.php">Home</a></li>
-                    <li class="bread__item"><img class="bread__img" src="img/ic_outline-keyboard-arrow-right.svg" alt=""></li>
-                    <li class="bread__item"><p class="bread__name">Personal account</p></li>
-                </ul>
+<article class="article">
+    <div class="container " >
+        <div class=" lk__main_img">
+            <div class="lk__img"></div> 
+        </div>
+        <div class="row ">
+            <div class="col-4 lk__info">
+                <?php include('include/lk_info.php'); ?>
             </div>
-            <div class="row">
+            <div class="col-8 article__left">
+                <ul class="lk__list">
+                    <li class="lk__item"><a class="lk__link  " href="lk.php">Информация</a></li>
+                    <li class="lk__item"><a class="lk__link lk__link__active" href="lk-add.php">Начисления</a></li>
+                </ul>
+                <table  >
+            <tr>
                 
-                <div class="col-4">
-                <?php include('include/about.php'); ?>
-                </div>
-                <div class="col-8 article__left">
-                    
-                       <ul class="lk__list">
-                        <li class="lk__item"><a class="lk__link" href="lk.php">Project</a></li>
-                        <li class="lk__item"><a class="lk__link lk__link__active" href="lk-add.php">Add a project</a></li>
-                        <li class="lk__item"><a class="lk__link" href="lk-about.php?id=<?= $user ?>">About</a></li>
-                       </ul>
-
-
-                       <div class="row">
-                        <div class="col-8">
-                            <h2 class="form__title">Add a project</h2>
-                            <p class="form__subtitle">Add your project, do not violate the rules of the site</p>
-        
-                            <form enctype="multipart/form-data" method="post">
-                                <div><input class="form__input" type="text" name="title" placeholder="title" id=""></div>
-                                <div><input class="form__input" type="text" name="subtitle" placeholder="subtitle" id=""></div>
-                                <div>
-                                    <textarea class="form__input" name="text" id="" cols="30" rows="10"></textarea>
-                                </div>
-                                <div><input class="form__input" type="date" name="date" placeholder="date" id=""></div>
-                                <div><input class="form__input" type="text" name="time" placeholder="time" id=""></div>
-                                <div>
-                                    <select class="form__input" name="category_id" id="">
-                                    <?php 
-			
-            $sql = "SELECT * FROM `category`";
-            $res = $mysqli -> query($sql);
-
-            if($res -> num_rows > 0) {
-                while($resArticle = $res -> fetch_assoc()) {
-            
-        ?>
-                                        <option value="<?=  $resArticle['id'] ?>"><?=  $resArticle['name'] ?></option>
-                                        <?php } } ?>
-                                    </select>
-                                </div> <br>
-                                <label class="stylelabel" >Изображение</label>
-                                <div id="baseimg-upload">
-                                <input class="form-control" type="hidden" name="MAX_FILE_SIZE" value="5000000"/>
-                                <input class="form-control" type="file" name="upload_image" />
-                                </div>
-
-                                
-                                <input class="form__btn" name="submit_add" type="submit" value="Send">
-                            </form>
-        
+                <th>Стипендия</th>
                 
-        
-                        </div>
-                        
-                    </div>
-                    
-                </div>
+            </tr>
                 
+                <?php 
+                    $sql = "SELECT
+                  
+                    SUM(total_sum) AS grand_total
+                    FROM (
+                        SELECT 
+                       
+                        (CASE 
+                            WHEN academ = 1 THEN 1700
+                            ELSE 0
+                        END) 
+                        +
+                        (CASE 
+                            WHEN social = 1 THEN 3500
+                            ELSE 0
+                        END) 
+                        +
+                        (CASE 
+                            WHEN upacadem = 1 THEN 11500
+                            ELSE 0
+                        END) 
+                        +
+                        (CASE 
+                            WHEN upsocial = 1 THEN 10500
+                            ELSE 0
+                        END)
+                        +
+                        (CASE 
+                            WHEN military = 1 THEN 4400
+                            ELSE 0
+                        END)
+                        +
+                        (CASE 
+                            WHEN namestep = 1 THEN 11875
+                            ELSE 0
+                        END) 
+                        +
+                        (CASE 
+                            WHEN president = 1 THEN 3000
+                            ELSE 0
+                        END) 
+                        +
+                        (CASE 
+                            WHEN needhelp = 1 THEN 4000
+                            ELSE 0
+                        END) AS total_sum
+                        FROM students t1
+                        JOIN user t2 ON (t1.student_id = t2.student_id )
+                        WHERE t2.id='$user' 
+                        ) AS subquery
+
+                  
+                   
+                  
+                    ";
+                    $res = $mysqli -> query($sql);
+
+                    if($res -> num_rows > 0) {
+                        while($resArticle = $res -> fetch_assoc()) {
+                ?>
+                    <!-- <div class="article__block">
+                        <p class="article__mintext" style="font-weight: bold">Курс обучения: </p>  <p class="article__mintext"><?=  $resArticle['course_number'] ?> </p> 
+                        <p class="article__mintext" style="font-weight: bold">Степень обучения: </p>  <p class="article__mintext"><?=  $resArticle['education_degree'] ?> </p> 
+                        <p class="article__mintext" style="font-weight: bold">Средний балл: </p>  <p class="article__mintext"><?=  $resArticle['score'] ?> </p> 
+                        <p class="article__mintext" style="font-weight: bold">Стипендии: </p>  
+                        <p class="article__mintext">
+                            <?= $resArticle['academ'] ?> <?= $resArticle['social'] ?> <?= $resArticle['upacadem'] ?>
+                            <?= $resArticle['upsocial'] ?> <?= $resArticle['military'] ?> <?= $resArticle['namestep'] ?> 
+                            <?= $resArticle['president'] ?> <?= $resArticle['needhelp'] ?> 
+                        </p> 
+                    </div> -->
+                    <tr>
+                   
+                    <td><?=  $resArticle['grand_total'] ?> руб</td>
+                    <!-- <td><?=  $resArticle['education_degree'] ?></td>
+                    <td><?=  $resArticle['score'] ?> </td>
+                    <td>  <?= $resArticle['academ'] ?> <?= $resArticle['social'] ?> <?= $resArticle['upacadem'] ?>
+                            <?= $resArticle['upsocial'] ?> <?= $resArticle['military'] ?> <?= $resArticle['namestep'] ?> 
+                            <?= $resArticle['president'] ?> <?= $resArticle['needhelp'] ?> </td> -->
+                   
+                </tr>
+            <?php } } ?>	
+
+        </table>
+              
             </div>
         </div>
-    </article>
+    </div>
+</article>   
 
     <?php include('include/footer.php'); ?>
-
 
 </body>
 </html>
