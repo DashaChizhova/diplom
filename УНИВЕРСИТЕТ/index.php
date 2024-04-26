@@ -32,7 +32,7 @@ if(isset($_SESSION['user']['id'])){
                     <h2 class="header__subtitle">Узнайте всю информацию о своей стипендии </h2>
                     <br>
                     <?php if (!isset($_SESSION['user']) )  {  ?>  
-                    <li class="nav__item"><a href="aut.php" class="nav__btn">ВОЙТИ</a></li>
+                    <li class="nav__item"><a href="mail.php" class="nav__btn">Отправить заявку</a></li>
                     <?php } ?>
                 </div>
                 <div class="header__utp header__imgs">

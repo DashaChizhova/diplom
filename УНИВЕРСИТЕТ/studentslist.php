@@ -37,14 +37,18 @@ else {
     <div class="container">
         <div class="row bread">
             <form  method="post" action="found_student.php">
+                <div>
+                <input class="form__input" type="number" name="value_field" placeholder="Номер студенческого" id="" value="" style="width: 70%">
+                <!-- <li class="nav__item"><a href="#" class="nav__btn" type="submit" id="count_btn" onclick="showStudent()">Найти</a></li> -->
+                <li class="nav__item"> <input class="form__btn" type="submit"  onclick="showStudent()" value="Найти">   </li>
+               
+                </div>
                 <!-- <select  id="userType" onchange="showUsers()">
                     <option value="registered">Зарегистрированные</option>
                     <option value="unregistered">Незарегистрированные</option>
                     <option value="all">Все</option>
                 </select> -->
-                <input class="form__input" type="number" name="value_field" placeholder="Номер студенческого" id="" value="" >
-                <!-- <li class="nav__item"><a href="#" class="nav__btn" type="submit" id="count_btn" onclick="showStudent()">Найти</a></li> -->
-                <input class="form__btn" type="submit"  onclick="showStudent()" value="Найти">   
+              
             </form>
         </div>
         <table id="registeredUsers" >
@@ -66,7 +70,7 @@ else {
             </tr>
             <?php 
                 $sql = "SELECT *,
-                    ROW_NUMBER() OVER (ORDER BY t1.id) AS row_number,
+                    ROW_NUMBER() OVER (ORDER BY t2.surname) AS row_number,
                     t2.name AS studentsname,
                     t2.patronymic AS patronymic,
                     t2.surname AS surname,
@@ -132,6 +136,49 @@ else {
                  
                 </tr>
             <?php  } } ?>	
+            <?php 
+                $sql = "SELECT *,
+                    ROW_NUMBER() OVER (ORDER BY t1.id) AS row_number,
+                    COUNT(t1.student_id) AS allstudents,
+                    (SELECT COUNT(student_id) FROM students WHERE academ = 1) AS allacadem,
+                    (SELECT COUNT(student_id) FROM students WHERE social = 1) AS allsocial,
+                    (SELECT COUNT(student_id) FROM students WHERE upacadem = 1) AS allupacadem,
+                    (SELECT COUNT(student_id) FROM students WHERE upsocial = 1) AS allupsocial,
+                    (SELECT COUNT(student_id) FROM students WHERE military = 1) AS allmilitary,
+                    (SELECT COUNT(student_id) FROM students WHERE namestep = 1) AS allnamestep,
+                    (SELECT COUNT(student_id) FROM students WHERE president = 1) AS allpresident,
+                    (SELECT COUNT(student_id) FROM students WHERE needhelp = 1) AS allneedhelp
+            
+                 
+
+                    FROM students t1 
+                    JOIN user t2 ON t1.student_id = t2.student_id 
+                    JOIN score t3 ON t1.student_id = t3.student_id 
+                    
+                  ";
+                
+                $res = $mysqli -> query($sql);
+
+                if($res -> num_rows > 0) {
+                    while($resArticle = $res -> fetch_assoc()) {
+            ?>
+            <tr style="background-color:#fce6ff">
+                    <td style="background-color: #fce6ff" >ИТОГО   </td>
+                    <td><?= $resArticle['allstudents'] ?></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td><?= $resArticle['allacadem'] ?></td>
+                    <td><?= $resArticle['allsocial'] ?></td>
+                    <td><?= $resArticle['allupacadem'] ?></td> 
+                    <td><?= $resArticle['allupsocial'] ?></td>
+                    <td><?= $resArticle['allmilitary'] ?></td>
+                    <td><?= $resArticle['allnamestep'] ?></td>
+                    <td><?= $resArticle['allpresident'] ?></td>
+                    <td><?= $resArticle['allneedhelp'] ?></td> 
+                    <td></td>
+                </tr>
+                <?php  } } ?>	
 
         </table>
         <!-- <table id="student_table" >

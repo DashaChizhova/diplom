@@ -1,0 +1,51 @@
+<?php 
+session_start();
+include('include/db_connect.php'); 
+if(isset($_SESSION['user']['id'])){
+    $user = $_SESSION['user']['id']; 
+}
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Добавление новости</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/setka.css">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    
+<?php include('include/nav.php'); ?>
+
+<section class="form">
+    <div class="container">
+        <div class="row justify__content__center form__shadow">
+            <div class="col-5 form__block">
+                <h2 class="form__title">Отправьте заявку на стипендию</h2>
+                <form enctype="multipart/form-data" method="post" action="include/send_application.php">
+                  
+                    <div><input type="text" id="name" name="name" class="form__input" placeholder="Имя"></div>
+                    <div><input type="email" id="name" name="email" class="form__input" placeholder="Почта"></div>
+                
+                    <div>
+                        <textarea style="height:200px" class="form__input" name="message" id="" cols="30" rows="50" ></textarea>
+                    </div>
+                    <!-- <div><label class="input-file">
+                            <input class="form__input"  type="file" name="avatar" >		
+                            <span><img class="foto_reg" src="img/foto.png" alt=""></span>
+                        </label>
+                    </div> -->
+                    <input class="form__btn" name="submit_add" type="submit" value="Отправить">
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<?php include('include/footer.php'); ?>
+
+</body>
+</html>

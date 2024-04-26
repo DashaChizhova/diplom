@@ -122,7 +122,7 @@ if (isset($_POST["submit_add"]))
                             <label class="input-file">
                                 <input class="form-control" type="hidden" name="MAX_FILE_SIZE" value="5000000"/>
                                 <input class="form-control"  type="file" name="upload_image" >		
-                                <span><img class="foto_reg" src="img/foto.png" alt=""></span>
+                                <span><img class="foto" src="img/foto.png" alt=""></span>
                             </label>
                             </div>
                             '; } 
@@ -131,7 +131,7 @@ if (isset($_POST["submit_add"]))
                         <div><input class="form__input" type="tel" name="phone" value="<?=  $resPost['phone'] ?>" placeholder="Phone" id=""></div>
                         <div><input class="form__input" type="email" name="email" value="<?=  $resPost['email'] ?>" placeholder="Email" id=""></div>
                         <div><input class="form__input" type="password" name="password" value="<?=  $resPost['pass'] ?>" placeholder="Password" id=""></div>
-                        <div><input class="form__input" type="password" name="repeat_password"  placeholder="Repeat at password" id=""></div>
+                        <div><input class="form__input" type="password" name="repeat_password"  placeholder="Повторите пароль" id=""></div>
                         <?php  } ?>
                         <input class="form__btn" name="submit_add" type="submit" value="Сохранить">
                     </form>

@@ -132,9 +132,9 @@ align-items: center;
     color: #a7a7a7;
     font-weight: 700;
     text-align: left;
-text-align: center;
-    font-size: 35px;
-    line-height: 29px;
+    text-align: center;
+    font-size: 33px;
+    line-height: 32px;
     margin-top: 10%;
   
 }
@@ -156,6 +156,7 @@ text-align: center;
     color: #C5C5C5;
     text-align: center;
     font-size: 20px;
+    line-height: 25px;
 }
 .project__btn{
     text-transform: uppercase;
@@ -266,8 +267,7 @@ input[type=search]::placeholder {
     font-size: 10px;
 }
 .header__img{
-    width: 270px;
-    height: 280px;
+   
     box-shadow: 0px 35px 55px -15px rgb(185, 204, 212);
     border-radius: 10%;
 }
@@ -293,12 +293,15 @@ input[type=search]::placeholder {
     cursor: pointer;
 }
 .header__img1{
+    width: 270px;
+    height: 280px;
     margin-bottom: 95px;
     margin-right: 20px;
 }
 .header__img2{
     margin-bottom: 35px;
-   
+    width: 270px;
+    height: 280px;
 }
 .head__stick{
     color:  #E6E8EC;
@@ -735,6 +738,10 @@ margin-bottom: 30px;
     width: 20px;
     height: 20px;
 }
+.foto{
+    width: 40px;
+    height: 45px;
+}
 /* ИНПУТ ДЛЯ ОТПРАВКИ ФОТО */
 
 /* TABLE */
@@ -804,3 +811,53 @@ table {
     transform: translateY(-50%);
   }
 
+.bank__block{
+  
+ width: 70%;
+   height: 68px;
+    border-radius: 15px;
+    box-shadow: 2px 2px 21px -5px rgb(149, 149, 149);
+    padding: 10px 15px;
+    margin-bottom: 20px;
+    margin-left: 65px;
+   
+}
+.bank__img{
+    width: 53px;
+    height: 57px;
+    box-shadow: none;
+    margin-bottom:0;
+    float: left;
+    margin-right: 10px;
+    margin-top: 5px;
+}
+.bank__title{
+    width: 30%;
+    color: #0D0C22;
+    color: #000000;
+    font-size: 20px;
+    font-weight: 750;
+    margin-top: 15px;
+ 
+ 
+
+}
+.bank__mintext{
+    width: 30%;
+    color: #959595;
+    font-size: 19px;
+    line-height: 24px;
+    margin-top: 2px;
+   
+  
+}
+.bank__price{
+    color: #0D0C22;
+    color: #000000;
+    font-size:22px;
+    font-weight: 750;
+    line-height: 40px;
+    padding-bottom: 15px;
+    float: right;
+    margin-top: 13px;
+}

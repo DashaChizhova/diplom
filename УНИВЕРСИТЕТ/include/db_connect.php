@@ -1,4 +1,5 @@
 <?php
+//подключение к базе данных
 	$db_host = "localhost";
 	$db_user = "root";
 	$db_password = "";

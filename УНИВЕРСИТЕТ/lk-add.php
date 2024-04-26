@@ -78,13 +78,23 @@ unset($_POST["upload_image"]);
                     <li class="lk__item"><a class="lk__link  " href="lk.php">Информация</a></li>
                     <li class="lk__item"><a class="lk__link lk__link__active" href="lk-add.php">Начисления</a></li>
                 </ul>
-                <table  >
-            <tr>
-                
-                <th>Стипендия</th>
-                
-            </tr>
-                
+                <div class="bank__block">
+                            <img class="article__logo bank__img" src="img/sber-vk-3mdthumbnail_gyFF4eN.jpg__0_0x0.jpg" alt="">
+                            <div style="width: 70%; float: left">
+                            <h1 class="bank__title">Сбербанк</h1>
+                            <p class="bank__mintext" >01.01.2024 10:00</p>
+                            </div>
+                            <h1 class="bank__price">6000 руб</h1>
+        </div>
+        <div class="bank__block">
+                            <img class="article__logo bank__img" src="img/sber-vk-3mdthumbnail_gyFF4eN.jpg__0_0x0.jpg" alt="">
+                            <div style="width: 70%; float: left">
+                            <h1 class="bank__title">Сбербанк</h1>
+                            <p class="bank__mintext" >01.02.2024 10:00</p>
+                            </div>
+                            <h1 class="bank__price">6000 руб</h1>
+        </div>
+
                 <?php 
                     $sql = "SELECT
                   
@@ -145,30 +155,20 @@ unset($_POST["upload_image"]);
                     if($res -> num_rows > 0) {
                         while($resArticle = $res -> fetch_assoc()) {
                 ?>
-                    <!-- <div class="article__block">
-                        <p class="article__mintext" style="font-weight: bold">Курс обучения: </p>  <p class="article__mintext"><?=  $resArticle['course_number'] ?> </p> 
-                        <p class="article__mintext" style="font-weight: bold">Степень обучения: </p>  <p class="article__mintext"><?=  $resArticle['education_degree'] ?> </p> 
-                        <p class="article__mintext" style="font-weight: bold">Средний балл: </p>  <p class="article__mintext"><?=  $resArticle['score'] ?> </p> 
-                        <p class="article__mintext" style="font-weight: bold">Стипендии: </p>  
-                        <p class="article__mintext">
-                            <?= $resArticle['academ'] ?> <?= $resArticle['social'] ?> <?= $resArticle['upacadem'] ?>
-                            <?= $resArticle['upsocial'] ?> <?= $resArticle['military'] ?> <?= $resArticle['namestep'] ?> 
-                            <?= $resArticle['president'] ?> <?= $resArticle['needhelp'] ?> 
-                        </p> 
-                    </div> -->
-                    <tr>
                    
-                    <td><?=  $resArticle['grand_total'] ?> руб</td>
-                    <!-- <td><?=  $resArticle['education_degree'] ?></td>
-                    <td><?=  $resArticle['score'] ?> </td>
-                    <td>  <?= $resArticle['academ'] ?> <?= $resArticle['social'] ?> <?= $resArticle['upacadem'] ?>
-                            <?= $resArticle['upsocial'] ?> <?= $resArticle['military'] ?> <?= $resArticle['namestep'] ?> 
-                            <?= $resArticle['president'] ?> <?= $resArticle['needhelp'] ?> </td> -->
                    
-                </tr>
+                   
+                    <div class="bank__block">
+                            <img class="article__logo bank__img" src="img/sber-vk-3mdthumbnail_gyFF4eN.jpg__0_0x0.jpg" alt="">
+                            <div style="width: 70%; float: left">
+                            <h1 class="bank__title">Сбербанк</h1>
+                            <p class="bank__mintext" >01.03.2024 10:00</p>
+                            </div>
+                            <h1 class="bank__price"><?=  $resArticle['grand_total'] ?> руб</h1>
+        </div>
             <?php } } ?>	
-
-        </table>
+           
+    
               
             </div>
         </div>
